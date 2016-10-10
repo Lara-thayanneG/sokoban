@@ -1,8 +1,10 @@
 #main{
-    width: 500px;
-    height: 500px;
-    border: 1px solid #333;
-    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 20px solid #333;
+    position: absolute;
+    top:0px;
+    left:0px;
 }
 
 #human{
@@ -10,6 +12,6 @@
     height: 20px;
     background: #021;
     position:absolute; 
-    top:140px; 
-    left:140px;
+    top:20px; 
+    left:20px;
 }
