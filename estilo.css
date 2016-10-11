@@ -7,11 +7,28 @@
     left:0px;
 }
 
-#human{
+#jogador{
     width: 20px;
     height: 20px;
     background: #021;
     position:absolute; 
     top:20px; 
     left:20px;
+}
+
+.parede{
+    width: 60px;
+    height: 60px;
+    background: #037;
+    position:absolute; 
+}
+
+#parede1{
+    width: 60px;
+    height: 60px;
+}
+
+#parede2{
+    width: 20px;
+    height: 20px;
 }
