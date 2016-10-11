@@ -1,7 +1,7 @@
 #main{
-    width: 200px;
-    height: 200px;
-    border: 20px solid #333;
+    width: 140px;
+    height: 140px;
+    border: 1px solid #037;
     position: absolute;
     top:0px;
     left:0px;
@@ -10,7 +10,7 @@
 #jogador{
     width: 20px;
     height: 20px;
-    background: #021;
+    background: #071;
     position:absolute; 
     top:20px; 
     left:20px;
@@ -23,6 +23,13 @@
     position:absolute; 
 }
 
+.caixa{
+    width: 20px;
+    height: 20px;
+    background: #720;
+    position:absolute; 
+}
+
 #parede1{
     width: 60px;
     height: 60px;
@@ -32,3 +39,4 @@
     width: 20px;
     height: 20px;
 }
+
