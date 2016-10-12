@@ -29,7 +29,7 @@
 .caixa{
     width: 80px;
     height: 80px;
-    background: #Ef1;
+    background: #Ef1 url('Xcaixa.png');
     border: 1px solid #555;
     position:absolute; 
 }
@@ -37,7 +37,7 @@
 .marca{
     width: 80px;
     height: 80px;
-    background: #AAA;
+    background: url("X.png");
     border: 1px dashed #555;
     position:absolute; 
 }

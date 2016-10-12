@@ -35,20 +35,70 @@ $(function(){
     var mainPosition = main.position();
 
 
-    var leftMain = function(bloco){
-        return bloco.left>mainPosition.left;
-    }
-    var rightMain = function(bloco){
-        return (bloco.left+bloco.div.width())<main.width();
-    }
-    var topMain = function(bloco){
-        return (bloco.top)>mainPosition.top;
-    }
-    var bottomMain = function(bloco){
-        return (bloco.top+bloco.div.height())<main.height();
-    }
+var verificaVitoria = function(){
+       var flag1 = false;
+       var flag2 = false;
+       var flag3 = false;
 
+
+       if( (caixa1.top==marca1.top && caixa1.left==marca1.left) 
+       || (caixa1.top==marca2.top && caixa1.left==marca2.left) 
+       || (caixa1.top==marca3.top && caixa1.left==marca3.left)) {
+           caixa1.div.css("background-image","url('Xok.png')");
+           flag1=true;
+       }else{
+           caixa1.div.css("background-image","url('Xcaixa.png')");
+           flag1=false;
+       }
+       
+       if( (caixa2.top==marca1.top && caixa2.left==marca1.left) 
+       || (caixa2.top==marca2.top && caixa2.left==marca2.left) 
+       || (caixa2.top==marca3.top && caixa2.left==marca3.left)  ){
+
+       caixa2.div.css("background-image","url('Xok.png')");
+           flag2=true;
+       }else{
+           caixa2.div.css("background-image","url('Xcaixa.png')");
+           flag2=false;
+       }
+       
+       if( (caixa3.top==marca1.top && caixa3.left==marca1.left)
+       || (caixa3.top==marca2.top && caixa3.left==marca2.left) 
+       || (caixa3.top==marca3.top && caixa3.left==marca3.left)  ) {
+           caixa3.div.css("background-image","url('Xok.png')");
+           flag3=true;
+       }else{
+           caixa3.div.css("background-image","url('Xcaixa.png')");
+           flag3=false;
+       }
+       
+       
+       
+       if(flag1 && flag2 && flag3){
+           $("p").css("visibility","visible");
+       }
+   }
+
+
+    verificaVitoria();
     $(window).keydown(function(e){
+        movimenta(e);
+    });
+   
+
+
+
+
+
+
+
+
+
+
+
+
+    var movimenta = function(e){
+         
 
         jogadorPosition = jogador.div.position();
         var elemColidido = null;
@@ -112,28 +162,29 @@ $(function(){
            }
         }
 
+      
+       verificaVitoria();
 
-       if(( (caixa1.top==marca1.top && caixa1.left==marca1.left) 
-       || (caixa2.top==marca1.top && caixa2.left==marca1.left) 
-       || (caixa3.top==marca1.top && caixa3.left==marca1.left)  ) 
-       
-       &&( (caixa1.top==marca2.top && caixa1.left==marca2.left) 
-       || (caixa2.top==marca2.top && caixa2.left==marca2.left) 
-       || (caixa3.top==marca2.top && caixa3.left==marca2.left)  ) 
-       
-       &&( (caixa1.top==marca3.top && caixa1.left==marca3.left) 
-       || (caixa2.top==marca3.top && caixa2.left==marca3.left) 
-       || (caixa3.top==marca3.top && caixa3.left==marca3.left)  ))  {
-           
-           
-           $("p").css("visibility","visible");
-       }
+    }
 
-
-
-    });
+     var leftMain = function(bloco){
+        return bloco.left>mainPosition.left;
+    }
+    var rightMain = function(bloco){
+        return (bloco.left+bloco.div.width())<main.width();
+    }
+    var topMain = function(bloco){
+        return (bloco.top)>mainPosition.top;
+    }
+    var bottomMain = function(bloco){
+        return (bloco.top+bloco.div.height())<main.height();
+    }
 
 
+
+
+
+    
 
    
    function Bloco(id,tipo,topInicial,leftInicial){
