@@ -42,13 +42,58 @@
     position:absolute; 
 }
 
-#parede1,#parede2{
+.espaco{
     width: 80px;
-    height: 560px;
+    height: 80px;
+    background: #fff;
+    position:absolute;  
 }
 
-#parede3,#parede4{
+#parede1{
+    width: 80px;
+    height: 480px;
+}
+
+#parede2{
+    width: 80px;
+    height: 480px;
+}
+
+#espaco1{
+    width: 80px;
+    height: 80px;
+}
+
+#espaco2{
+    width: 80px;
+    height: 80px;
+}
+
+#espaco3{
+    width: 160px;
+    height: 80px;
+}
+
+#espaco4{
+    width: 240px;
+    height: 80px;
+}
+
+
+
+
+#parede3{
     width: 320px;
+    height: 80px;
+}
+
+#parede4{
+    width: 400px;
+    height: 80px;
+}
+
+#parede6,#parede7{
+    width: 160px;
     height: 80px;
 }
 
@@ -61,3 +106,6 @@ p{
     visibility: hidden;
 }
 
+a{
+    color: #Ef1;
+}
