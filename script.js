@@ -41,9 +41,9 @@ var verificaVitoria = function(){
        var flag3 = false;
 
 
-       if( (caixa1.top==marca1.top && caixa1.left==marca1.left) 
-       || (caixa1.top==marca2.top && caixa1.left==marca2.left) 
-       || (caixa1.top==marca3.top && caixa1.left==marca3.left)) {
+       if( (caixa1.isSamePosition(marca1)) 
+       || (caixa1.isSamePosition(marca2)) 
+       || (caixa1.isSamePosition(marca3))) {
            caixa1.div.css("background-image","url('Xok.png')");
            flag1=true;
        }else{
@@ -51,9 +51,9 @@ var verificaVitoria = function(){
            flag1=false;
        }
        
-       if( (caixa2.top==marca1.top && caixa2.left==marca1.left) 
-       || (caixa2.top==marca2.top && caixa2.left==marca2.left) 
-       || (caixa2.top==marca3.top && caixa2.left==marca3.left)  ){
+       if( (caixa2.isSamePosition(marca1)) 
+       || (caixa2.isSamePosition(marca2)) 
+       || (caixa2.isSamePosition(marca3))) {
 
        caixa2.div.css("background-image","url('Xok.png')");
            flag2=true;
@@ -62,9 +62,9 @@ var verificaVitoria = function(){
            flag2=false;
        }
        
-       if( (caixa3.top==marca1.top && caixa3.left==marca1.left)
-       || (caixa3.top==marca2.top && caixa3.left==marca2.left) 
-       || (caixa3.top==marca3.top && caixa3.left==marca3.left)  ) {
+      if( (caixa3.isSamePosition(marca1)) 
+       || (caixa3.isSamePosition(marca2)) 
+       || (caixa3.isSamePosition(marca3))) {
            caixa3.div.css("background-image","url('Xok.png')");
            flag3=true;
        }else{
@@ -73,9 +73,11 @@ var verificaVitoria = function(){
        }
        
        
-       
+       //todas as caixas estão em seus devidos lugares, então o jogador
+       //venceu o estágio
        if(flag1 && flag2 && flag3){
            $("p").css("visibility","visible");
+           $(window).unbind();
        }
    }
 
@@ -103,7 +105,7 @@ var verificaVitoria = function(){
         jogadorPosition = jogador.div.position();
         var elemColidido = null;
         //esquerda
-        if(e.keyCode=='37' && leftMain(jogador)){ 
+        if(e.keyCode==LEFT && leftMain(jogador)){ 
             elemColidido = jogador.colisao(LEFT,blocos);
            if(elemColidido==null){ 
 
@@ -120,7 +122,7 @@ var verificaVitoria = function(){
            }
         }
         //cima
-         if(e.keyCode=='38' && topMain(jogador)){
+         if(e.keyCode==UP && topMain(jogador)){
            elemColidido = jogador.colisao(UP,blocos);  
            if(elemColidido==null){ 
              jogador.mover(-80,0);
@@ -134,7 +136,7 @@ var verificaVitoria = function(){
            }
         }
         //direita
-         if(e.keyCode=='39' && rightMain(jogador)){
+         if(e.keyCode==RIGHT && rightMain(jogador)){
              elemColidido = jogador.colisao(RIGHT,blocos);
             if(elemColidido==null){ 
               jogador.mover(0,80);
@@ -148,7 +150,7 @@ var verificaVitoria = function(){
            }
         }
         //baixo
-         if(e.keyCode=='40' && bottomMain(jogador)){
+         if(e.keyCode==DOWN && bottomMain(jogador)){
              elemColidido = jogador.colisao(DOWN,blocos);
              if(elemColidido==null){    
                jogador.mover(80,0);
@@ -186,14 +188,14 @@ var verificaVitoria = function(){
 
     
 
-   
+   //função construtora para os elementos do jogo (parede,jogador,caixa,espaco vazio)
    function Bloco(id,tipo,topInicial,leftInicial){
        this.div = $(id);
        this.top = topInicial;
        this.left = leftInicial;
        this.tipo = tipo;
 
-
+       //posiciona o bloco
        this.div.css({"top":this.top+"px","left":this.left+"px"});
 
        this.getTipo = function(){
@@ -242,6 +244,13 @@ var verificaVitoria = function(){
 
            return elemColidido;
            
+       }
+
+       this.isSamePosition = function(outro){
+           if(this.top==outro.top && this.left==outro.left){
+               return true;
+           }
+           return false;
        }
 
      
