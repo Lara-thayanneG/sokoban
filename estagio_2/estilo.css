@@ -92,7 +92,7 @@
     height: 80px;
 }
 
-#parede6{
+#parede6,#parede7{
     width: 160px;
     height: 80px;
 }
@@ -106,3 +106,6 @@ p{
     visibility: hidden;
 }
 
+a{
+    color: #Ef1;
+}

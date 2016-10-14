@@ -20,6 +20,7 @@ $(function(){
     
     var parede6 = new Bloco("#parede6",PAREDE,320,80);
     var parede7 = new Bloco("#parede7",PAREDE,400,160);
+    var parede8 = new Bloco("#parede8",PAREDE,240,80);
 
     var caixa1 = new Bloco("#caixa1",CAIXA,160,160);
     var caixa2 = new Bloco("#caixa2",CAIXA,160,240);
