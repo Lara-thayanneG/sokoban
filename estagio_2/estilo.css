@@ -1,0 +1,108 @@
+#main{
+    width: 480px;
+    height: 560px;
+    /*border: 1px solid #037;*/
+    background-color: #023;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+#jogador{
+    width: 80px;
+    height: 80px;
+    background: #05d;
+    background-image: url("carita-feliz.png");
+    border: 1px solid #05d;
+    position:absolute; 
+    top:20px; 
+    left:20px;
+}
+
+.parede{
+    width: 80px;
+    height: 80px;
+    background: #037;
+    position:absolute; 
+}
+
+.caixa{
+    width: 80px;
+    height: 80px;
+    background: #Ef1 url('Xcaixa.png');
+    border: 1px solid #555;
+    position:absolute; 
+}
+
+.marca{
+    width: 80px;
+    height: 80px;
+    background: url("X.png");
+    border: 1px dashed #555;
+    position:absolute; 
+}
+
+.espaco{
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    position:absolute;  
+}
+
+#parede1{
+    width: 80px;
+    height: 480px;
+}
+
+#parede2{
+    width: 80px;
+    height: 480px;
+}
+
+#espaco1{
+    width: 80px;
+    height: 80px;
+}
+
+#espaco2{
+    width: 80px;
+    height: 80px;
+}
+
+#espaco3{
+    width: 160px;
+    height: 80px;
+}
+
+#espaco4{
+    width: 240px;
+    height: 80px;
+}
+
+
+
+
+#parede3{
+    width: 320px;
+    height: 80px;
+}
+
+#parede4{
+    width: 400px;
+    height: 80px;
+}
+
+#parede6{
+    width: 160px;
+    height: 80px;
+}
+
+p{
+    position: absolute;
+    color: #fff;
+    font-size: 20pt;
+    top:20;
+    left:160;
+    visibility: hidden;
+}
+
