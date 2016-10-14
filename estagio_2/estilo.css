@@ -106,6 +106,15 @@ p{
     visibility: hidden;
 }
 
+#movimentos{
+    position: absolute;
+    color: #fff;
+    font-size: 20pt;
+    top:10;
+    left:160;
+	visibility: visible;
+}
+
 a{
     color: #Ef1;
 }

@@ -33,6 +33,8 @@ $(function(){
     var main = $("#main"); 
     var position;
     var mainPosition = main.position();
+    var movimentos_jogador = 0;
+
 
 
 var verificaVitoria = function(){
@@ -110,6 +112,7 @@ var verificaVitoria = function(){
            if(elemColidido==null){ 
 
               jogador.mover(0,-80);
+              ++movimentos_jogador;
 
            }else if(elemColidido.getTipo()==CAIXA){
               
@@ -117,6 +120,7 @@ var verificaVitoria = function(){
                   if(leftMain(elemColidido)){
                     elemColidido.mover(0,-80);
                     jogador.mover(0,-80);
+                    ++movimentos_jogador;
                   }
                }
            }
@@ -126,11 +130,13 @@ var verificaVitoria = function(){
            elemColidido = jogador.colisao(UP,blocos);  
            if(elemColidido==null){ 
              jogador.mover(-80,0);
+             ++movimentos_jogador;
            }else if(elemColidido.getTipo()==CAIXA){
              if(elemColidido.colisao(UP,paredes)==null){
                  if(topMain(elemColidido)){
                    elemColidido.mover(-80,0);
                    jogador.mover(-80,0);
+                   ++movimentos_jogador;
                  }
                }
            }
@@ -140,11 +146,13 @@ var verificaVitoria = function(){
              elemColidido = jogador.colisao(RIGHT,blocos);
             if(elemColidido==null){ 
               jogador.mover(0,80);
+              ++movimentos_jogador;
            }else if(elemColidido.getTipo()==CAIXA){
                if(elemColidido.colisao(RIGHT,paredes)==null){
                    if(rightMain(elemColidido)){
                       elemColidido.mover(0,80);
                       jogador.mover(0,80);
+                      ++movimentos_jogador;
                    }
                }
            }
@@ -154,17 +162,19 @@ var verificaVitoria = function(){
              elemColidido = jogador.colisao(DOWN,blocos);
              if(elemColidido==null){    
                jogador.mover(80,0);
+               ++movimentos_jogador;
             }else if(elemColidido.getTipo()==CAIXA){
                if(elemColidido.colisao(DOWN,paredes)==null){
                    if(bottomMain(elemColidido)){
                       elemColidido.mover(80,0);
                       jogador.mover(80,0);
+                      ++movimentos_jogador;
                    }
                }
            }
         }
 
-      
+       $("#movimentos").text("Movimentos: " + movimentos_jogador);
        verificaVitoria();
 
     }
